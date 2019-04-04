@@ -16,7 +16,7 @@ trap '{
 }' INT
 
 # Paths to source code and logfiles.
-srcdir="/opt/demeter/src/apps/tapir"
+srcdir="/opt/demeter/src/apps/tapir-lwip"
 logdir="/opt/demeter/src/logs"
 
 # Machines on which replicas are running.
