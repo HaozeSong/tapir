@@ -6,9 +6,9 @@ CC = gcc
 CXX = g++
 LD = g++
 
-CFLAGS := -g -Wall -pthread -iquote.obj/gen -Wno-uninitialized -O3 -DNDEBUG
+CFLAGS := -Wall -pthread -iquote.obj/gen -Wno-uninitialized -O3 -DNDEBUG -DNASSERT
 #CFLAGS := -g -Wall -pthread -iquote.obj/gen -Wno-uninitialized 
-CXXFLAGS := -g -std=c++0x
+CXXFLAGS := -std=c++0x -O3 -DNDEBUG
 LDFLAGS := -levent_pthreads 
 ## Debian package: check
 #CHECK_CFLAGS := $(shell pkg-config --cflags check)
@@ -47,7 +47,7 @@ ifeq ($(TARGETOS), Darwin)
 endif
 
 # Additional flags
-PARANOID = 1
+PARANOID = 0
 ifneq ($(PARANOID),0)
 override CFLAGS += -DPARANOID=1
 $(info WARNING: Paranoid mode enabled)
